@@ -1,0 +1,68 @@
+{% extends 'base.html' %}
+
+
+{% block title %}
+    {{ znak | capfirst }}
+{% endblock %}
+
+
+{% block content %}
+
+    <div class="card text-bg-info mb-3 horoskop-card" style="max-width: 550px; margin: 20px auto;">
+
+      <div class="card-header kard-naslov">
+        <h3>{{ znak | capfirst }}</h3>
+      </div>
+
+      <div class="card-body">
+
+        <ul class="nav nav-tabs d-flex justify-content-around" id="myTab" role="tablist">
+          <li class="nav-item" role="presentation">
+            <button class="nav-link active btn-sm" id="home-tab" data-bs-toggle="tab" data-bs-target="#home-tab-pane" type="button" role="tab" aria-controls="home-tab-pane" aria-selected="true">Dnevni</button>
+          </li>
+
+          <li class="nav-item" role="presentation">
+            <button class="nav-link btn-sm" id="sutra-tab" data-bs-toggle="tab" data-bs-target="#sutra-tab-pane" type="button" role="tab" aria-controls="sutra-tab-pane" aria-selected="false">Sutrašnji</button>
+          </li>
+
+          <li class="nav-item" role="presentation">
+            <button class="nav-link btn-sm" id="profile-tab" data-bs-toggle="tab" data-bs-target="#profile-tab-pane" type="button" role="tab" aria-controls="profile-tab-pane" aria-selected="false">Nedeljni</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link btn-sm" id="contact-tab" data-bs-toggle="tab" data-bs-target="#contact-tab-pane" type="button" role="tab" aria-controls="contact-tab-pane" aria-selected="false">Mesečni</button>
+          </li>
+          <li class="nav-item" role="presentation">
+            <button class="nav-link btn-sm" id="disabled-tab" data-bs-toggle="tab" data-bs-target="#disabled-tab-pane" type="button" role="tab" aria-controls="disabled-tab-pane" aria-selected="false">Godišnji</button>
+          </li>
+        </ul>
+
+
+        <div class="tab-content" id="myTabContent">
+          <div class="tab-pane fade show active" id="home-tab-pane" role="tabpanel" aria-labelledby="home-tab" tabindex="0">
+            <p>{{ dnevni | safe }}</p>
+          </div>
+
+           <div class="tab-pane fade" id="sutra-tab-pane" role="tabpanel" aria-labelledby="sutra-tab" tabindex="0">
+            <p>{{ sutra | safe }}</p>
+          </div>
+
+          <div class="tab-pane fade" id="profile-tab-pane" role="tabpanel" aria-labelledby="profile-tab" tabindex="0">
+            <p>{{ nedeljni | safe }}</p>
+          </div>
+          <div class="tab-pane fade" id="contact-tab-pane" role="tabpanel" aria-labelledby="contact-tab" tabindex="0">
+            <p>{{ mesecni | safe }}</p>
+          </div>
+          <div class="tab-pane fade" id="disabled-tab-pane" role="tabpanel" aria-labelledby="disabled-tab" tabindex="0">
+            <p>{{ godisnji | safe }}</p>
+          </div>
+        </div>
+      </div>
+
+    <a href="../" class="btn btn-primary">Nazad</a>
+    
+    </div>
+
+
+
+{% endblock %}
+

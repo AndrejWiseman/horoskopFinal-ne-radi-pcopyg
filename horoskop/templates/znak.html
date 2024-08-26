@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}
+     {{ znak.znak }}
+{% endblock %}
+
+{% block content %}
+
+    <h1>{{ znak.znak }}</h1>
+    <h2>Osnovne karakteristike</h2>
+    <ul>
+        <li>Element: {{ znak.osnovne_karakteristike.Element }}</li>
+        <li>Kvalitet: {{ znak.osnovne_karakteristike.Kvalitet }}</li>
+        <li>Vladajuća planeta: {{ znak.osnovne_karakteristike.Vladajuća_planeta }}</li>
+        <li>Vladajuća kuća: {{ znak.osnovne_karakteristike.Vladajuća_kuća }}</li>
+        <li>Suprotni znak: {{ znak.osnovne_karakteristike.Suprotni_znak }}</li>
+        <li>Vrline: {{ znak.Ovan.osnovne_karakteristike.Vrline|join:", " }}</li>
+        <li>Mane: {{ znak.Ovan.osnovne_karakteristike.Mane|join:", " }}</li>
+        <li>Voli: {{ znak.osnovne_karakteristike.Voli|join:", " }}</li>
+        <li>Ne voli: {{ znak.osnovne_karakteristike.Ne_voli|join:", " }}</li>
+        <li>Poznati: {{ znak.osnovne_karakteristike.Poznati|join:", " }}</li>
+    </ul>
+
+    <h2>Karakteristike</h2>
+    <p>{{ znak.karakteristike.opis }}</p>
+    <h3>Ljubav</h3>
+    <p>{{ znak.karakteristike.ljubav }}</p>
+    <h3>Karijera</h3>
+    <p>{{ znak.karakteristike.karijera }}</p>
+    <h3>Prijatelji i porodica</h3>
+    <p>{{ znak.karakteristike.prijatelji_i_porodica }}</p>
+    <h3>Zdravlje</h3>
+    <p>{{ znak.karakteristike.zdravlje }}</p>
+    <h3>Slaganje</h3>
+    <p>{{ znak.karakteristike.slaganje }}</p>
+
+
+{% endblock %}
