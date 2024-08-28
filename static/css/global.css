@@ -5,10 +5,11 @@
 }
 
 body {
-    background-color: #f19159;
+    background-color: #fafafa;
 }
 
 
+/*==============================*/
 /* Overlay za spinner */
 .spinner-overlay {
     display: none;
@@ -17,7 +18,7 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(255, 20, 147, 0.8);
+    background-color: rgba(241, 145, 89, 0.8);
     z-index: 9999;
 }
 
@@ -28,8 +29,64 @@ body {
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: 10000;
+    color: whitesmoke;
 }
 
 .sp-cust {
-    color: #f19159;
+    color: whitesmoke;
 }
+/*=======================================*/
+/*=======================================*/
+
+
+.kontejner {
+    padding: 10px;
+}
+
+
+.hor-naslov {
+    text-align: center;
+    margin: 15px 0;
+}
+.znakovi-index {
+    /*width: 80%;*/
+    margin: 0 auto;
+    display: grid;
+    gap: 8px;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+}
+.znakovi-index .znak-logo {
+    width: 150px;
+    height: 150px;
+    background-color: rgba(241, 145, 89, 0.49);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    place-self: center;
+}
+.znakovi-index .znak-logo a {
+    text-decoration: none;
+
+
+}
+
+
+@media (max-width: 768px) {
+    .znakovi-index {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+}
+
+@media (max-width: 510px) {
+    .znakovi-index {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+
+
+
+
+
+
+

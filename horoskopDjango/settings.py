@@ -5,7 +5,6 @@ import os
 import dj_database_url
 from os import getenv
 from dotenv import load_dotenv
-# import cloudinary_storage
 from pathlib import Path
 
 load_dotenv()
@@ -42,7 +41,6 @@ INSTALLED_APPS = [
 
     'horoskop',
 
-
 ]
 
 MIDDLEWARE = [
@@ -75,17 +73,6 @@ TEMPLATES = [
 ]
 
 WSGI_APPLICATION = 'horoskopDjango.wsgi.application'
-
-
-# Database
-# https://docs.djangoproject.com/en/5.0/ref/settings/#databases
-
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.sqlite3',
-#         'NAME': BASE_DIR / 'db.sqlite3',
-#     }
-# }
 
 
 DATABASES = {
