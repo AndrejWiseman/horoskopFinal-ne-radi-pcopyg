@@ -1,6 +1,7 @@
 
 from pathlib import Path
 import os
+import environ
 
 import dj_database_url
 from os import getenv
@@ -75,16 +76,29 @@ TEMPLATES = [
 WSGI_APPLICATION = 'horoskopDjango.wsgi.application'
 
 
+# DATABASES = {
+#   'default': {
+#     'ENGINE': 'django.db.backends.postgresql',
+#     'NAME': getenv('PGDATABASE'),
+#     'USER': getenv('PGUSER'),
+#     'PASSWORD': getenv('PGPASSWORD'),
+#     'HOST': getenv('PGHOST'),
+#     'PORT': getenv('PGPORT', 5432),
+#   }
+# }
+
 DATABASES = {
   'default': {
-    'ENGINE': 'django.db.backends.postgresql',
-    'NAME': getenv('PGDATABASE'),
-    'USER': getenv('PGUSER'),
-    'PASSWORD': getenv('PGPASSWORD'),
-    'HOST': getenv('PGHOST'),
-    'PORT': getenv('PGPORT', 5432),
+    'ENGINE': os.environ.get('db_engine', 'django.db.backends.postgresql'),
+    'NAME': os.environ.get('PGDATABASE'),
+    'USER': os.environ.get('PGUSER'),
+    'PASSWORD': os.environ.get('PGPASSWORD'),
+    'HOST': os.environ.get('PGHOST'),
+    'PORT': os.environ.get('PGPORT', 5432),
   }
 }
+
+
 
 
 
